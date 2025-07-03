@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { ENV } from "./config/env.js";
 import { db } from "./config/db.js";
 import { favoritesTable } from "./db/schema.js";
@@ -12,6 +13,7 @@ const PORT = ENV.PORT || 5001;
 if (ENV.NODE_ENV === "production") job.start();
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/api/health", (req, res) => {
   res.status(200).json({ success: true });
