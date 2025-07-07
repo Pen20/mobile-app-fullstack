@@ -7,7 +7,7 @@ import { MealAPI } from "../../services/mealAPI";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import { Image } from "expo-image";
 
-import { recipeDetailStyles } from "../../assets/styles/recipe-detail.styles";
+import { recipeDetailStyles } from "../../assets/styles/recipe-details.styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { COLORS } from "../../constants/colors";
 
