@@ -4,9 +4,7 @@ export const MealAPI = {
   // search meal by name
   searchMealsByName: async (query) => {
     try {
-      const response = await fetch(
-        `${BASE_URL}/search.php?s=${encodeURIComponent(query)}`
-      );
+      const response = await fetch(`${BASE_URL}/search.php?s=${encodeURIComponent(query)}`);
       const data = await response.json();
       return data.meals || [];
     } catch (error) {
@@ -68,9 +66,7 @@ export const MealAPI = {
   // filter by main ingredient
   filterByIngredient: async (ingredient) => {
     try {
-      const response = await fetch(
-        `${BASE_URL}/filter.php?i=${encodeURIComponent(ingredient)}`
-      );
+      const response = await fetch(`${BASE_URL}/filter.php?i=${encodeURIComponent(ingredient)}`);
       const data = await response.json();
       return data.meals || [];
     } catch (error) {
@@ -82,9 +78,7 @@ export const MealAPI = {
   // filter by category
   filterByCategory: async (category) => {
     try {
-      const response = await fetch(
-        `${BASE_URL}/filter.php?c=${encodeURIComponent(category)}`
-      );
+      const response = await fetch(`${BASE_URL}/filter.php?c=${encodeURIComponent(category)}`);
       const data = await response.json();
       return data.meals || [];
     } catch (error) {
@@ -103,8 +97,7 @@ export const MealAPI = {
       const ingredient = meal[`strIngredient${i}`];
       const measure = meal[`strMeasure${i}`];
       if (ingredient && ingredient.trim()) {
-        const measureText =
-          measure && measure.trim() ? `${measure.trim()} ` : "";
+        const measureText = measure && measure.trim() ? `${measure.trim()} ` : "";
         ingredients.push(`${measureText}${ingredient.trim()}`);
       }
     }

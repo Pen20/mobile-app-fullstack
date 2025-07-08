@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  Alert,
-  ScrollView,
-  TouchableOpacity,
-  FlatList,
-} from "react-native";
+import { View, Text, Alert, ScrollView, TouchableOpacity, FlatList } from "react-native";
 import { useClerk, useUser } from "@clerk/clerk-expo";
 import { useEffect, useState } from "react";
 import { API_URL } from "../../constants/api";
@@ -62,10 +55,7 @@ const FavoritesScreen = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={favoritesStyles.header}>
           <Text style={favoritesStyles.title}>Favorites</Text>
-          <TouchableOpacity
-            style={favoritesStyles.logoutButton}
-            onPress={handleSignOut}
-          >
+          <TouchableOpacity style={favoritesStyles.logoutButton} onPress={handleSignOut}>
             <Ionicons name="log-out-outline" size={22} color={COLORS.text} />
           </TouchableOpacity>
         </View>

@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  FlatList,
-} from "react-native";
+import { View, Text, TextInput, TouchableOpacity, FlatList } from "react-native";
 import { MealAPI } from "../../services/mealAPI";
 import { useDebounce } from "../../hooks/useDebounce";
 import { searchStyles } from "../../assets/styles/search.styles";
@@ -103,15 +97,8 @@ const SearchScreen = () => {
             returnKeyType="search"
           />
           {searchQuery.length > 0 && (
-            <TouchableOpacity
-              onPress={() => setSearchQuery("")}
-              style={searchStyles.clearButton}
-            >
-              <Ionicons
-                name="close-circle"
-                size={20}
-                color={COLORS.textLight}
-              />
+            <TouchableOpacity onPress={() => setSearchQuery("")} style={searchStyles.clearButton}>
+              <Ionicons name="close-circle" size={20} color={COLORS.textLight} />
             </TouchableOpacity>
           )}
         </View>

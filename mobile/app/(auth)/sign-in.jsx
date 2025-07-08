@@ -118,17 +118,12 @@ const SignInScreen = () => {
             </View>
 
             <TouchableOpacity
-              style={[
-                authStyles.authButton,
-                loading && authStyles.buttonDisabled,
-              ]}
+              style={[authStyles.authButton, loading && authStyles.buttonDisabled]}
               onPress={handleSignIn}
               disabled={loading}
               activeOpacity={0.8}
             >
-              <Text style={authStyles.buttonText}>
-                {loading ? "Signing In..." : "Sign In"}
-              </Text>
+              <Text style={authStyles.buttonText}>{loading ? "Signing In..." : "Sign In"}</Text>
             </TouchableOpacity>
 
             {/* Sign Up Link */}
@@ -137,8 +132,7 @@ const SignInScreen = () => {
               onPress={() => router.push("/(auth)/sign-up")}
             >
               <Text style={authStyles.linkText}>
-                Don&apos;t have an account?{" "}
-                <Text style={authStyles.link}>Sign up</Text>
+                Don&apos;t have an account? <Text style={authStyles.link}>Sign up</Text>
               </Text>
             </TouchableOpacity>
           </View>
